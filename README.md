@@ -10,7 +10,7 @@ library(tidyverse) # library for data manipulation
 library(tidytext) # text manipulation
 library(stringr) # regex and pattern matching in strings
 library(tibble) # library that holds the special datastructures
-library(ggiraph) # plotting library
+
 
 
 # read in the data from the text file
