@@ -19,14 +19,15 @@ as.integer(raw_text$sentence_num) -> raw_text$sentence_num
 
 # build a new dataframe that contains the sentence numbers and the string detection result 
 # for each word
+
 df <- data_frame(
   sentence_num = raw_text$sentence_num,
-  priceless = str_detect(raw_text$text, "priceless"),
-  valuable = str_detect(raw_text$text, "valuable"),
-  absent = str_detect(raw_text$text, "absent"),
-  specialist_specialists = str_detect(raw_text$text, "specialist|specialists"),
-  expert_experts = str_detect(raw_text$text, "expert|experts"),
-  courage = str_detect(raw_text$text, "courage")
+  priceless = str_detect(raw_text$text, "\\spriceless\\s|\\sPriceless\\s"),
+  valuable = str_detect(raw_text$text, "\\svaluable\\s|\\sValuable\\s"),
+  absent = str_detect(raw_text$text, "\\sabsent\\s|\\sAbsent\\s"),
+  specialist_specialists = str_detect(raw_text$text, "\\sspecialist\\s|\\sspecialists\\s|\\sSpecialist\\s|\\sSpecialists\\s"),
+  expert_experts = str_detect(raw_text$text, "\\sexpert\\s|\\sexperts\\s|\\sExpert\\s|\\sExperts\\s"),
+  courage = str_detect(raw_text$text, "\\scourage\\s|\\sCourage\\s")
 )
 
 
